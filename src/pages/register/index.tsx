@@ -1,7 +1,13 @@
+import RegisterForm from "../../components/registerForm"
+import { RegisterPage } from "./style"
 
 function Register() {
     return(
-        <h1>Register</h1>
+        <RegisterPage>
+            <div>
+                <RegisterForm/>  
+            </div>
+        </RegisterPage>
     )
 }
 

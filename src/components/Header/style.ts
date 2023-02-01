@@ -70,7 +70,7 @@ color: #5CFD6A;
         }
     }
 
-    .innerDiv > .buttons > .smallerButton {
+    .innerDiv > .buttons > .toLogin > .smallerButton {
         width: 80px;
         height: 40px;
         border-radius: 0px;
@@ -93,7 +93,7 @@ color: #5CFD6A;
         }
     }
 
-    .innerDiv > .buttons > .smallerButton2{
+    .innerDiv > .buttons > .toLogin > .smallerButton2{
         &:before{
             width: 0;
             height: 100%;

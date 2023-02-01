@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const LoginForms = styled.section`
+export const RegisterForms = styled.section`
 width: 400px;
-height: 400px;
+height: 600px;
 display: flex;
 flex-direction: column;
 justify-content: space-around;
@@ -16,7 +16,7 @@ border: 1px solid #5CFD6A;
 
     .divForm{
         min-width: 330px;
-        height: 230px;
+        height: 400px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -48,9 +48,9 @@ border: 1px solid #5CFD6A;
         
     }
 
-    .divForm > .toDashboard > .button{
+    .divForm > .button{
         width: 120px;
-        height: 40px;
+        height: 60px;
         border-radius: 0px;
         border: 1px solid #5CFD6A;
         color: #5CFD6A;
@@ -71,7 +71,7 @@ border: 1px solid #5CFD6A;
         }
     }
 
-    .divForm > .toDashboard > .inButton{
+    .divForm > .inButton{
         &:before{
             width: 0;
             height: 100%;
@@ -85,7 +85,11 @@ border: 1px solid #5CFD6A;
         }
     }
 
-    .toRegister{
+    h2{
+        color: #5CFD6A;
+    }
+
+    .toLogin{
         color: #5CFD6A;
         text-decoration: none;
         position: relative;
