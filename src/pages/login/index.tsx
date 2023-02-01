@@ -1,7 +1,15 @@
+import LoginAnimation from "../../components/LoginAnimation"
+import LoginForm from "../../components/loginForm"
+import { LoginPage } from "./style"
 
 function Login() {
     return(
-        <h1>Login</h1>
+        <LoginPage>
+            <div>
+                <LoginAnimation/>
+                <LoginForm/>
+            </div>
+        </LoginPage>
     )
 }
 
