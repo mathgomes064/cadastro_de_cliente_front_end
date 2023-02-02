@@ -1,3 +1,4 @@
+import EditContact from "../EditContact";
 import { ContactCards } from "./style";
 
 function Cards(){
@@ -8,7 +9,7 @@ function Cards(){
                     <h1>Joãozinho da Silva</h1>
                     <h2>Email: joaozinho@hotmail.com</h2>
                     <h2>Telefone: 000000000</h2>
-                    <button className="smallerButton1 smallerButton2">Editar</button>
+                    <EditContact/>
                     <button className="smallerButton3 smallerButton4">Deletar</button>
                 </li>
                 {/* <li className="card">

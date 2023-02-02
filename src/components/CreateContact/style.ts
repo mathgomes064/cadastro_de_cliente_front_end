@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 width: 400px;
-height: 590px;
+height: 500px;
 display: flex;
 flex-direction: column;
-justify-content: center;
+justify-content: center;;
 align-items: center;
 border: 1px solid #5CFD6A;
 background-color: black;
@@ -14,12 +14,13 @@ gap: 30px;
     .mainTitle > h1{
         color: #5CFD6A;
         font-size: 20px;
+        width: 100%;
     }
 
     .divForm{
         color: #5CFD6A;
         width: 100%;
-        height: 450px;
+        height: 350px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -54,7 +55,7 @@ gap: 30px;
         justify-content: space-between;
     }
 
-    .divForm > .buttonsDiv > .button{
+    .divForm > .button{
         width: 120px;
         height: 40px;
         border-radius: 0px;
@@ -67,23 +68,6 @@ gap: 30px;
         :hover{
             color: yellow;
             border: 1px solid yellow;
-            transition: .3s ease;
-        }
-    }
-
-    .divForm > .buttonsDiv > .button2{
-        width: 120px;
-        height: 40px;
-        border-radius: 0px;
-        border: 1px solid #5CFD6A;
-        color: #5CFD6A;
-        background-color: transparent;
-        position: relative;
-        cursor: pointer;
-
-        :hover{
-            color: red;
-            border: 1px solid red;
             transition: .3s ease;
         }
     }

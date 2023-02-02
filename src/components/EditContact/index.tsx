@@ -12,14 +12,14 @@ const style = {
     transform: "translate(-50%, -50%)",
 }
 
-function EditProfile(){
+function EditContact(){
     const [open, setOpen] = useState(false)
     const handleOpen = () => setOpen(true)
     const handleClose = () => setOpen(false)
 
     return(
         <div>
-            <ModalButton onMouseDown={handleOpen}>Editar Perfil</ModalButton>
+            <ModalButton onMouseDown={handleOpen}>Editar</ModalButton>
             <Modal
                 open={open}
                 onClose={handleClose}
@@ -32,21 +32,16 @@ function EditProfile(){
                 <Box sx={style}>
                     <Container>
                         <div className="mainTitle">
-                            <h1>Editar Perfil</h1>
+                            <h1>Editar Contato</h1>
                         </div>
                         <div className="divForm">
                             <label className="title">Nome</label>
-                            <input placeholder="Seu Nome..." type="text" />
+                            <input placeholder="Nome..." type="text" />
                             <label className="title">Email</label>
-                            <input placeholder="Seu Email..." type="text" />
-                            <label className="title">Senha</label>
-                            <input placeholder="Sua Senha..." type="text" />
+                            <input placeholder="Email..." type="text" />
                             <label className="title">Telefone</label>
-                            <input placeholder="Seu Telefone..." type="text" />
-                            <div className="buttonsDiv">
-                                <button className="button" onClick={handleClose}>Editar</button>
-                                <button className="button2" onClick={handleClose}>Deletar</button>
-                            </div>
+                            <input placeholder="Telefone..." type="text" />
+                            <button className="button" onClick={handleClose}>Editar</button>
                         </div>
                     </Container>
                 </Box>
@@ -56,4 +51,4 @@ function EditProfile(){
     )
 }
 
-export default EditProfile;
+export default EditContact;
