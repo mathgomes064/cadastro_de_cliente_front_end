@@ -36,7 +36,7 @@ border: 1px solid #5CFD6A;
 
     .divForm > input{
         width: 90%;
-        height: 60px;
+        height: 90px;
         background-color: transparent;
         border: 1px solid #5CFD6A;
         outline: 0;
@@ -45,12 +45,17 @@ border: 1px solid #5CFD6A;
         ::placeholder{
             color: #5CFD6A;
         }
-        
     }
 
-    .divForm > .toDashboard > .button{
+    .divForm > span{
+        color: red;
+        width: 93%;
+        font-size: 12px;
+    }
+
+    .divForm > .button{
         width: 120px;
-        height: 40px;
+        height: 80px;
         border-radius: 0px;
         border: 1px solid #5CFD6A;
         color: #5CFD6A;
@@ -71,7 +76,7 @@ border: 1px solid #5CFD6A;
         }
     }
 
-    .divForm > .toDashboard > .inButton{
+    .divForm > .inButton{
         &:before{
             width: 0;
             height: 100%;

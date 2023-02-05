@@ -16,12 +16,12 @@ border: 1px solid #5CFD6A;
 
     .divForm{
         min-width: 330px;
-        height: 400px;
+        height: 425px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 15px;
+        gap: 10px;
         /* background-color: gray; */
     }
 
@@ -46,6 +46,13 @@ border: 1px solid #5CFD6A;
             color: #5CFD6A;
         }
         
+    }
+
+    .divForm > span{
+        color: red;
+        width: 93%;
+        font-size: 12px;
+        /* background-color: gray; */
     }
 
     .divForm > .button{
