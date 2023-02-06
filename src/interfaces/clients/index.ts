@@ -1,3 +1,5 @@
+import { ReactNode } from "react"
+
 export interface IClientRegister{
     id: string
     name: string
@@ -11,3 +13,13 @@ export interface IClientLogin {
     email: string;
     senha: string;
   }
+
+export interface IClientProvidersProps{
+    children: ReactNode
+}
+
+// export interface IClientContext{
+//     registerClient: (
+
+//     )
+// }

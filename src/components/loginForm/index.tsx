@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form"
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { IClientLogin } from "../../interfaces/clients";
+import axios from "axios";
 
 function LoginForm(){
     const formSchema = yup.object().shape({
@@ -15,8 +16,8 @@ function LoginForm(){
     })
 
     const onSubmitFunction = (data: any) =>{
-        //eniar para a api
-    }
+        //enviar para a api
+  }
 
     console.log(errors)
 

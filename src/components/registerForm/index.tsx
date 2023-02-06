@@ -1,11 +1,20 @@
 import { RegisterForms } from "./style"
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 import { useForm } from "react-hook-form"
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { IClientRegister } from "../../interfaces/clients"
+import { useState } from "react"
+import axios from "axios"
+import { AiFillEyeInvisible } from "react-icons/ai";
+import { AiFillEye } from "react-icons/ai";
 
 function RegisterForm(){
+    const [mostrarSenha, setMostrarSenha] = useState(false);
+    const [mostrarSenhaConf, setMostrarSenhaConf] = useState(false);
+
+    const history = useHistory() as any
+
     const formSchema = yup.object().shape({
         name: yup.string().required("Nome obrigatório"),
         email: yup.string().required("Email obrigatório").email("Email inválido"),
@@ -18,10 +27,13 @@ function RegisterForm(){
     })
 
     const onSubmitFunction = (data: any) => {
-        //eniar para a api
+        axios.post("http://localhost:3000/clients", data)
+            .then((response) => console.log(response))
+            .then((response) => setTimeout(history.push("/"), 5000))
+            .catch((err) => console.log(err))
     }
 
-    console.log(errors)
+    // console.log(errors)
 
 return(
     <RegisterForms>
@@ -34,7 +46,20 @@ return(
                 <input placeholder="Seu Email..." type="text" {...register("email")}/>
                 <span>{errors.email?.message}</span>
                 <label className="title">Senha</label>
-                <input placeholder="Sua Senha..." type="text" {...register("senha")}/>
+                <div className="divInput">
+                <input placeholder="Sua Senha..." type={mostrarSenha? "text" : "password"} {...register("senha")}/>
+                {mostrarSenha ? (
+                <AiFillEye
+                onClick={() => setMostrarSenha(!mostrarSenha)}
+                className="olhoAberto"
+                />
+                ) : (
+                <AiFillEyeInvisible
+                    onClick={() => setMostrarSenha(!mostrarSenha)}
+                    className="olhoAberto"
+                />
+                )}
+                </div>
                 <span>{errors.senha?.message}</span>
                 <label className="title">Telefone</label>
                 <input placeholder="Seu Telefone..." type="text" {...register("telefone")}/>

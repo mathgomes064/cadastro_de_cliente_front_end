@@ -45,7 +45,37 @@ border: 1px solid #5CFD6A;
         ::placeholder{
             color: #5CFD6A;
         }
-        
+    }
+
+    .divForm > .divInput{
+        display: flex;
+        justify-content: start;
+        width: 90%;
+        height: 60px;
+        background-color: transparent;
+        border: 1px solid #5CFD6A;
+        outline: 0;
+        padding-left: 10px;
+
+        ::placeholder{
+            color: #5CFD6A;
+        }
+    }
+
+    .divForm > .divInput > input{
+        height: 80%;
+        width: 90%;
+        background-color: transparent;
+        outline: 0;
+        border: none;
+
+        ::placeholder{
+            color: #5CFD6A;
+        }
+    }
+
+    .olhoAberto{
+        color: #5CFD6A;
     }
 
     .divForm > span{
