@@ -23,13 +23,19 @@ const ClientProvider = ({children}: IClientProvidersProps) =>{
 
     const login = (data: FieldValues) =>{
         axios.post("http://localhost:3000/clients/login", data)
-            .then((response) => localStorage.setItem("@client-data:token", JSON.stringify(response.data.token)))
-
+            .then((response) => {
+                localStorage.setItem(
+                    "@client-data:token",
+                    JSON.stringify(response.data.token)
+                );
+                setToken(response.data.token)
+            })
+            .then(() => history.push("/dashboard"))
     }
 
     return(
         <AuthContext.Provider
-          value={{registerClient}}>
+          value={{registerClient, login}}>
             {children}
         </AuthContext.Provider>
         )

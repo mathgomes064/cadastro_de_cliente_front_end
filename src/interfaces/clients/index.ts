@@ -11,7 +11,7 @@ export interface IClientRegister{
 
 export interface IClientLogin {
     email: string;
-    senha: string;
+    password: string;
   }
 
 export interface IClientProvidersProps{

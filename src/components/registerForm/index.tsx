@@ -4,16 +4,16 @@ import { useForm } from "react-hook-form"
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { IClientRegister } from "../../interfaces/clients"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import axios from "axios"
 import { AiFillEyeInvisible } from "react-icons/ai";
 import { AiFillEye } from "react-icons/ai";
+import { AuthContext } from "../../providers/clients/clientContext"
 
 function RegisterForm(){
     const [mostrarSenha, setMostrarSenha] = useState(false);
-    const [mostrarSenhaConf, setMostrarSenhaConf] = useState(false);
 
-    const history = useHistory() as any
+    const { registerClient }: any = useContext(AuthContext)
 
     const formSchema = yup.object().shape({
         name: yup.string().required("Nome obrigatório"),
@@ -26,19 +26,19 @@ function RegisterForm(){
         resolver: yupResolver(formSchema)
     })
 
-    const onSubmitFunction = (data: any) => {
-        axios.post("http://localhost:3000/clients", data)
-            .then((response) => console.log(response))
-            .then((response) => setTimeout(history.push("/"), 5000))
-            .catch((err) => console.log(err))
-    }
+    // const onSubmitFunction = (data: IClientRegister) => {
+    //     axios.post("http://localhost:3000/clients", data)
+    //         .then((response) => console.log(response))
+    //         .then((response) => setTimeout(history.push("/"), 5000))
+    //         .catch((err) => console.log(err))
+    // }
 
     // console.log(errors)
 
 return(
     <RegisterForms>
         <h1>CADASTRO DE CLIENTES</h1>
-            <form className="divForm" onSubmit={handleSubmit(onSubmitFunction)}>
+            <form className="divForm" onSubmit={handleSubmit(registerClient)}>
                 <label className="title">Nome</label>
                 <input placeholder="Seu Nome..." type="text" {...register("name")}/>
                 <span>{errors.name?.message}</span>
