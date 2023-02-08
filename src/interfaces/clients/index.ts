@@ -9,6 +9,13 @@ export interface IClientRegister{
     created_at: Date
 }
 
+export interface IClientUpdate{
+    name?: string
+    email?: string
+    senha?: string
+    telefone?: string
+}
+
 export interface IClientLogin {
     email: string;
     password: string;

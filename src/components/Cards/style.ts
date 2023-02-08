@@ -15,9 +15,29 @@ align-items: center;
         gap: 30px;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: start;
         align-items: center;
     }
+
+    .emptyContact{
+        color: #5CFD6A;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .gear{
+        width: 25px;
+        height: 25px;
+        -webkit-animation:spin 4s linear infinite;
+        -moz-animation:spin 4s linear infinite;
+        animation:spin 4s linear infinite;
+    }
+
+    @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+    @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+    @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
     .card{
         border: 1px solid #5CFD6A;
@@ -29,6 +49,12 @@ align-items: center;
         align-items: center;
         justify-content: center;
         gap: 40px;
+    }
+
+    .editContactButton{
+        background-color: transparent;
+        outline: 0;
+        border: none;
     }
 
     .container > .card > .smallerButton1 {

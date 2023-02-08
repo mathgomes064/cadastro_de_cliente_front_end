@@ -26,13 +26,6 @@ function RegisterForm(){
         resolver: yupResolver(formSchema)
     })
 
-    // const onSubmitFunction = (data: IClientRegister) => {
-    //     axios.post("http://localhost:3000/clients", data)
-    //         .then((response) => console.log(response))
-    //         .then((response) => setTimeout(history.push("/"), 5000))
-    //         .catch((err) => console.log(err))
-    // }
-
     // console.log(errors)
 
 return(
