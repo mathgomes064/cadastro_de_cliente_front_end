@@ -18,7 +18,6 @@ const ClientProvider = ({children}: IClientProvidersProps) =>{
     
     const registerClient = (data: IClientRegister) => {
         axios.post("http://localhost:3000/clients", data)
-            .then((response) => console.log(response))
             .then((response) => setTimeout(history.push("/"), 5000))
             .catch((err) => console.log(err))
     }
@@ -96,12 +95,20 @@ const ClientProvider = ({children}: IClientProvidersProps) =>{
                 Authorization: token,
               },
         })
-        // .then((response) =>{
-        //     getClientData()
-        // })
         .then((response) => setTimeout(history.push("/"), 5000))
         .catch((err) => console.log(err));
     }
+
+    const deleteProfile = (userId: string) =>{
+        axios.delete(`http://localhost:3000/clients/${userId}`, {
+            headers: {
+                'Authorization': token
+            }
+        })
+        .then((response) => {history.push("/")})
+        .catch((err) => console.log(err))
+    }
+
     
     return(
         <AuthContext.Provider
@@ -118,6 +125,7 @@ const ClientProvider = ({children}: IClientProvidersProps) =>{
             updateProfile,
             userId,
             setUserId,
+            deleteProfile,
             }}>
             {children}
         </AuthContext.Provider>

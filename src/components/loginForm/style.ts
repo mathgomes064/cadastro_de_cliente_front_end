@@ -34,6 +34,34 @@ border: 1px solid #5CFD6A;
         align-items: center;
     }
 
+    .divForm > .divInput{
+        display: flex;
+        justify-content: start;
+        width: 90%;
+        height: 95px;
+        background-color: transparent;
+        border: 1px solid #5CFD6A;
+        outline: 0;
+        padding-left: 10px;
+        color: #5CFD6A;
+
+        ::placeholder{
+            color: #5CFD6A;
+        }
+    }
+
+    .divForm > .divInput > input{
+        height: 80%;
+        width: 90%;
+        background-color: transparent;
+        outline: 0;
+        border: none;
+
+        ::placeholder{
+            color: #5CFD6A;
+        }
+    }
+
     .divForm > input{
         width: 90%;
         height: 90px;

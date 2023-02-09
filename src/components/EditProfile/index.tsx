@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form"
 import { IClientRegister } from "../../interfaces/clients";
 import { AuthContext } from "../../providers/clients/clientContext";
 import { IClientUpdate } from "../../interfaces/clients";
+import { useHistory } from "react-router-dom";
 
 const style = {
     position: "absolute",
@@ -34,11 +35,13 @@ function EditProfile(){
         resolver: yupResolver(formSchema)
     })
 
-    const {updateProfile, userId}: any = useContext(AuthContext)
+    const {updateProfile, userId, deleteProfile}: any = useContext(AuthContext)
     
     const handleUserEdit = (data: IClientUpdate) =>{
         updateProfile(data, userId)
     }
+
+    const history = useHistory()
 
     // console.log(errors)
 
@@ -71,7 +74,7 @@ function EditProfile(){
                             <input placeholder="Seu Telefone..." type="text" {...register("telefone")}/>
                             <div className="buttonsDiv">
                                 <button className="button" onClick={handleClose}>Editar</button>
-                                <button className="button2" onClick={handleClose}>Deletar</button>
+                                <button className="button2" onClick={() =>  deleteProfile(userId)}>Deletar</button>
                             </div>
                         </form>
                     </Container>

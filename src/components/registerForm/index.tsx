@@ -18,7 +18,7 @@ function RegisterForm(){
     const formSchema = yup.object().shape({
         name: yup.string().required("Nome obrigatório"),
         email: yup.string().required("Email obrigatório").email("Email inválido"),
-        senha: yup.string().required("Senha obrigatória"),
+        password: yup.string().required("Senha obrigatória"),
         telefone: yup.string().required("Telefone obrigatório"),
     })
 
@@ -40,7 +40,7 @@ return(
                 <span>{errors.email?.message}</span>
                 <label className="title">Senha</label>
                 <div className="divInput">
-                <input placeholder="Sua Senha..." type={mostrarSenha? "text" : "password"} {...register("senha")}/>
+                <input placeholder="Sua Senha..." type={mostrarSenha? "text" : "password"} {...register("password")}/>
                 {mostrarSenha ? (
                 <AiFillEye
                 onClick={() => setMostrarSenha(!mostrarSenha)}
@@ -53,7 +53,7 @@ return(
                 />
                 )}
                 </div>
-                <span>{errors.senha?.message}</span>
+                <span>{errors.password?.message}</span>
                 <label className="title">Telefone</label>
                 <input placeholder="Seu Telefone..." type="text" {...register("telefone")}/>
                 <span>{errors.telefone?.message}</span>
