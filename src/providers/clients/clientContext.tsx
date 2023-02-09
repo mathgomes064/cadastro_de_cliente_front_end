@@ -84,23 +84,25 @@ const ClientProvider = ({children}: IClientProvidersProps) =>{
             },
         })
         .then((response) =>{
-            console.log(response.data)
             getClientData()
         })
         .catch((err) => console.log(err));
     }
 
-    const updateProfile = (data: IClientUpdate, id:string) =>{
-        axios.put(`http://localhost:3000/client/${id}`, data, {
+    const [userId, setUserId] = useState("")
+    const updateProfile = (data: IClientUpdate, userId:string) =>{
+        axios.patch(`http://localhost:3000/clients/${userId}`, data, {
             headers: {
                 Authorization: token,
               },
         })
-        .then((response) =>{
-            getClientData()
-        })
+        // .then((response) =>{
+        //     getClientData()
+        // })
+        .then((response) => setTimeout(history.push("/"), 5000))
         .catch((err) => console.log(err));
     }
+    
     return(
         <AuthContext.Provider
           value={{
@@ -113,6 +115,9 @@ const ClientProvider = ({children}: IClientProvidersProps) =>{
             updateContact,
             setId,
             id,
+            updateProfile,
+            userId,
+            setUserId,
             }}>
             {children}
         </AuthContext.Provider>

@@ -93,6 +93,12 @@ color: #5CFD6A;
         }
     }
 
+    .tookButton{
+        background-color: transparent;
+        border: none;
+        outline: 0;
+    }
+
     .innerDiv > .buttons > .smallerButton2{
         &:before{
             width: 0;

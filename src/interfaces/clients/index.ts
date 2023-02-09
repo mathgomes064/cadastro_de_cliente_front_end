@@ -4,7 +4,7 @@ export interface IClientRegister{
     id: string
     name: string
     email: string
-    senha: string
+    password: string
     telefone: string
     created_at: Date
 }
@@ -12,7 +12,7 @@ export interface IClientRegister{
 export interface IClientUpdate{
     name?: string
     email?: string
-    senha?: string
+    password?: string
     telefone?: string
 }
 

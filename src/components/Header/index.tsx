@@ -10,7 +10,7 @@ function Header() {
 
     const history = useHistory()
 
-    const {client, getClientData}: any = useContext(AuthContext)
+    const {client, getClientData, setUserId}: any = useContext(AuthContext)
 
     useEffect(() => {getClientData()}, [])
 
@@ -22,7 +22,7 @@ function Header() {
                 </div>
                 <div className="buttons">
                     <CreateContact/>
-                    <EditProfile/>
+                    <button className="tookButton" onClick={() => {setUserId(client.id)}}><EditProfile/></button>
                     <button onClick={() => {history.push("/")
                     localStorage.clear()}} className="smallerButton smallerButton2">Sair</button>
                 </div>
